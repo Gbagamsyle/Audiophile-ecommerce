@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useQuery } from "convex/react";
 import "../../styles/checkout.css";
 
-export default function ConfirmationPage() {
+function ConfirmationContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams?.get("orderId");
 
@@ -35,13 +35,16 @@ export default function ConfirmationPage() {
     <main className="container confirmation-page">
       <section>
         <h1>Thank you, {name}!</h1>
-        <p>Your order <strong>#{order._id || orderId}</strong> has been received.</p>
+        <p>
+          Your order <strong>#{order._id || orderId}</strong> has been received.
+        </p>
 
         <h2>Order Summary</h2>
         <ul>
           {items.map((it) => (
             <li key={it.id}>
-              {it.name} — {it.quantity} × $ {it.price.toLocaleString()}
+              {it.name} — {it.quantity} × ${" "}
+              {it.price.toLocaleString()}
             </li>
           ))}
         </ul>
@@ -49,24 +52,37 @@ export default function ConfirmationPage() {
         <div className="order-totals">
           <div className="order-row">
             <span>Subtotal</span>
-            <strong>$ {subtotal.toLocaleString()}</strong>
+            <strong>${subtotal.toLocaleString()}</strong>
           </div>
           <div className="order-row">
             <span>Shipping</span>
-            <strong>$ {shipping.toLocaleString()}</strong>
+            <strong>${shipping.toLocaleString()}</strong>
           </div>
           <div className="order-row">
             <span>Tax</span>
-            <strong>$ {tax.toLocaleString()}</strong>
+            <strong>${tax.toLocaleString()}</strong>
           </div>
           <div className="order-row grand-total">
             <span>Grand Total</span>
-            <strong>$ {grandTotal.toLocaleString()}</strong>
+            <strong>${grandTotal.toLocaleString()}</strong>
           </div>
         </div>
 
-        <p>If you have any questions, contact us at <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>.</p>
+        <p>
+          If you have any questions, contact us at{" "}
+          <a href="mailto:support@yourdomain.com">
+            support@yourdomain.com
+          </a>.
+        </p>
       </section>
     </main>
+  );
+}
+
+export default function ConfirmationPage() {
+  return (
+    <Suspense fallback={<main className="container"><p>Loading...</p></main>}>
+      <ConfirmationContent />
+    </Suspense>
   );
 }
