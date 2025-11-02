@@ -1,7 +1,7 @@
 .banner {
   width: 100%;
   background: #191919;;
-  padding: 140px 0;
+  padding: 110px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,11 +16,12 @@
 }
 @media (max-width: 768px) {
   .banner {
-    padding: 100px 0;
+    padding: 70px 0;
   }
 
   .banner h1 {
     font-size: 28px;
     line-height: 38px;
+    margin-top: 50px;
   }
 }

@@ -3,19 +3,37 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Hero.module.css';
 import heroImage from '../../assets/home/desktop/image-hero.jpg';
+import heroTablet from '../../assets/home/tablet/image-header.jpg';
+import heroMobile from '../../assets/home/mobile/image-header.jpg';
+
 
 const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.heroBackground}>
-        <Image
-          src={heroImage}
-          alt="XX99 Mark II Headphones"
-          priority
-          fill
-          className={styles.heroImage}
-          sizes="100vw"
-        />
+      <Image
+  src={heroImage}
+  alt="XX99 Mark II Headphones"
+  priority
+  fill
+  className={styles.heroImage + ' ' + styles.desktop}
+/>
+<Image
+  src={heroTablet}
+  alt="XX99 Mark II Headphones"
+  priority
+  fill
+  className={styles.heroImage + ' ' + styles.tablet}
+/>
+
+<Image
+  src={heroMobile}
+  alt="XX99 Mark II Headphones"
+  priority
+  fill
+  className={styles.heroImage + ' ' + styles.mobile}
+/>
+
       </div>
       <div className={styles.container}>
         <div className={styles.content}>

@@ -7,6 +7,10 @@ import styles from './Navbar.module.css';
 import hamburgerIcon from '../../assets/shared/tablet/icon-hamburger.svg';
 import logo from '../../assets/shared/desktop/logo.svg';
 import cartIcon from '../../assets/shared/desktop/icon-cart.svg';
+import headphonesImage from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
+import speakersImage from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
+import earphonesImage from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
+import CategoryCard from '../CategoryCard/CategoryCard';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,11 +72,26 @@ const Navbar = () => {
           <CartDrawer userId="demo-user" open={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
           {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className={styles.mobileMenu}>
-              {/* Mobile menu content will go here */}
-            </div>
-          )}
+         {isMenuOpen && (
+  <div className={styles.mobileMenu}>
+      <CategoryCard 
+        title="HEADPHONES" 
+        image={headphonesImage} 
+        link="/headphones"
+      />
+      <CategoryCard 
+        title="SPEAKERS" 
+        image={speakersImage} 
+        link="/speakers"
+      />
+      <CategoryCard 
+        title="EARPHONES" 
+        image={earphonesImage} 
+        link="/earphones"
+      />
+  </div>
+)}
+
         </nav>
       </div>
     </header>

@@ -29,11 +29,38 @@
 }
 
 .heroImage {
-  position: relative !important;
   object-fit: cover;
   object-position: center;
-  opacity: 0.95;
-  z-index: 0;
+  position: relative !important;
+}
+
+.desktop {
+  display: block;
+}
+
+.tablet,
+.mobile {
+  display: none;
+}
+
+/* tablet */
+@media (max-width: 1110px) {
+  .desktop {
+    display: none;
+  }
+  .tablet {
+    display: block;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .tablet {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
 }
 
 .container {
@@ -42,17 +69,18 @@
   max-width: 1110px;
   height: 100%;
   margin: 0 auto;
-  padding: 96px 24px 0;
   display: flex;
   align-items: center;
-  padding-top: 192px; /* Account for fixed navbar (96px * 2) */
+  justify-content: flex-start;
+  padding: 0 24px;
 }
 
 .content {
-  position: relative;
   max-width: 396px;
   z-index: 2;
-  margin-left: 0;
+
+  /* this pushes text down from top like figma */
+  margin-top: 118px;
 }
 
 .overline {
