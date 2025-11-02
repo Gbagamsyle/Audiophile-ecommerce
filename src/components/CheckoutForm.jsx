@@ -2,9 +2,17 @@
 import React from "react";
 import "../styles/checkout.css";
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ onFormDataChange }) {
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    onFormDataChange((prev) => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
   return (
-    <form className="checkout-form">
+    <form className="checkout-form" onSubmit={(e) => e.preventDefault()}>
       <h1>Checkout</h1>
 
       {/* Billing Details */}
@@ -13,15 +21,15 @@ export default function CheckoutForm() {
         <div className="form-grid">
           <div className="form-group">
             <label htmlFor="name">Name</label>
-            <input id="name" type="text" placeholder="Alexei Ward" />
+            <input id="name" type="text" placeholder="Alexei Ward" onChange={handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
-            <input id="email" type="email" placeholder="alexei@mail.com" />
+            <input id="email" type="email" placeholder="alexei@mail.com" onChange={handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
-            <input id="phone" type="tel" placeholder="+1 202-555-0136" />
+            <input id="phone" type="tel" placeholder="+1 202-555-0136" onChange={handleInputChange} required />
           </div>
         </div>
       </section>
@@ -32,7 +40,7 @@ export default function CheckoutForm() {
         <div className="form-grid">
           <div className="form-group full-width">
             <label htmlFor="address">Your Address</label>
-            <input id="address" type="text" placeholder="1137 Williams Avenue" />
+            <input id="address" type="text" placeholder="1137 Williams Avenue" onChange={handleInputChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="zip">ZIP Code</label>

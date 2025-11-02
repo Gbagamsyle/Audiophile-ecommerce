@@ -1,0 +1,354 @@
+/* ===== Layout ===== */
+.pageContainer {
+  background: #F2F2F2;
+  min-height: 100vh;
+  padding: 79px 24px 141px;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mainContent {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.orderSummaryContainer {
+  width: 350px;
+  flex-shrink: 0;
+}
+
+/* ensure the summary card lines up with the form top and keeps a little breathing room */
+.orderSummaryContainer {
+  padding-top: 12px;
+}
+
+.goBack {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  text-decoration: none;
+  margin-bottom: 38px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.goBack:hover {
+  color: #000000;
+}
+
+.checkoutForm {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 54px 48px 48px;
+  flex: 1;
+  max-width: 730px;
+  margin-bottom: 0;
+}
+
+.title {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1.143px;
+  line-height: 32px;
+  text-transform: uppercase;
+  margin-bottom: 41px;
+}
+
+.formSection {
+  margin-bottom: 53px;
+}
+
+.formSection h2 {
+  color: #D87D4A;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.929px;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formGroup label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  color: #000000;
+}
+
+.formGroup input {
+  width: 100%;
+  height: 48px;
+  padding: 14px 20px;
+  border: 1px solid #CFCFCF;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  color: #000000;
+  caret-color: #D87D4A;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.formGroup input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+}
+
+.formGroup input:hover {
+  border-color: #D87D4A;
+}
+
+.formGroup input:focus {
+  border-color: #D87D4A;
+  outline: none;
+  background: transparent;
+}
+
+.error {
+  border-color: #CD2C2C !important;
+}
+
+.error:focus {
+  border-color: #CD2C2C !important;
+}
+
+.errorMessage {
+  color: #CD2C2C;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+/* ===== Payment Method Section ===== */
+.paymentMethod {
+  margin-bottom: 32px;
+}
+
+.paymentMethod > label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.radio {
+  height: 56px;
+  padding: 18px 24px;
+  border: 1px solid #CFCFCF;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.radio:hover {
+  border-color: #D87D4A;
+}
+
+.radio .radioInput {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #CFCFCF;
+  border-radius: 50%;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s ease;
+}
+
+.radio .radioInput:checked {
+  border-color: #D87D4A;
+}
+
+.radio .radioInput:checked::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #D87D4A;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio span {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  color: #000000;
+}
+
+/* ===== Payment Fields ===== */
+.paymentFields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* ===== Cash on Delivery Section ===== */
+.cashOnDelivery {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.cashOnDelivery p {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+  flex: 1;
+}
+
+/* ===== Submit Button ===== */
+.btnSubmit {
+  width: 100%;
+  height: 48px;
+  background: #D87D4A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 0;
+}
+
+.btnSubmit:hover {
+  background: #FBAF85;
+}
+
+.btnSubmit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #D87D4A;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1110px) {
+  .pageContainer {
+    padding: 48px 40px 116px;
+  }
+
+  .mainContent {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .checkoutForm {
+    padding: 30px 28px;
+    max-width: none;
+  }
+
+  .orderSummaryContainer {
+    width: 100%;
+  }
+
+  .goBack {
+    margin-bottom: 24px;
+  }
+
+  .formSection {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 24px 24px 97px;
+  }
+
+  .formGrid,
+  .paymentFields {
+    grid-template-columns: 1fr;
+  }
+
+  .formSection {
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom: 32px;
+  }
+
+  .checkoutForm {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageContainer {
+    padding: 16px 24px 97px;
+  }
+
+  .formGrid {
+    gap: 16px;
+  }
+
+  .cashOnDelivery {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cashOnDelivery p {
+    text-align: center;
+  }
+}

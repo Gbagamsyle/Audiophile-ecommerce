@@ -1,0 +1,38 @@
+.categories {
+  padding: 120px 0;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+  .categories {
+    padding: 96px 0;
+  }
+
+  .grid {
+    gap: 10px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 375px) {
+  .categories {
+    padding: 84px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 68px;
+  }
+}

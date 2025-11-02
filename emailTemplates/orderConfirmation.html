@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <style>
+      /* Simple responsive email styles */
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: #f7f7f7; margin:0; padding:0; }
+      .wrapper { max-width: 600px; margin: 24px auto; background: #ffffff; border-radius: 8px; overflow: hidden; }
+      .header { background: #000; color: #fff; padding: 24px; text-align: center; }
+      .content { padding: 24px; color: #222; }
+      .order-items { margin: 16px 0; padding: 0; list-style: none; }
+      .order-items li { display:flex; justify-content:space-between; padding:8px 0; border-bottom: 1px solid #eee; }
+      .totals { margin-top: 16px; }
+      .cta { display:inline-block; margin-top: 18px; background:#d87d4a; color:#fff; padding: 12px 20px; border-radius:6px; text-decoration:none; font-weight:700; }
+      @media (max-width: 480px) { .content { padding: 16px; } .header { padding: 16px; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper" role="article" aria-label="Order Confirmation">
+      <div class="header">
+        <h1>Thank you for your order</h1>
+      </div>
+      <div class="content">
+        <p>Hi <strong>{{name}}</strong>,</p>
+        <p>We received your order <strong>#{{orderId}}</strong>. Here’s a summary:</p>
+        <ul class="order-items">
+          {{#items}}
+          <li>
+            <span>{{name}} × {{quantity}}</span>
+            <span>${{price}}</span>
+          </li>
+          {{/items}}
+        </ul>
+
+        <div class="totals">
+          <p><strong>Subtotal:</strong> ${{subtotal}}</p>
+          <p><strong>Shipping:</strong> ${{shipping}}</p>
+          <p><strong>Tax:</strong> ${{tax}}</p>
+          <p><strong>Grand Total:</strong> ${{grandTotal}}</p>
+        </div>
+
+        <p>If you have questions, reply to this email or contact <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>.</p>
+
+        <a class="cta" href="{{orderUrl}}">View your order</a>
+
+        <p style="margin-top:18px;font-size:12px;color:#666">© { new Date().getFullYear() } Audiophile — All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

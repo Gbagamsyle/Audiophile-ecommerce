@@ -1,0 +1,130 @@
+/* PAGE GLOBAL SECTION SPACING */
+.productsList {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+  max-width: 1110px;
+  margin: 160px auto 200px;
+  padding: 0 24px;
+}
+
+/* PRODUCT BLOCK */
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 125px;
+}
+
+.product.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.product__image {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* TEXT CONTENT */
+.product__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.overline {
+  color: #D87D4A;
+  letter-spacing: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.product__content h2 {
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.43px;
+  text-transform: uppercase;
+  max-width: 396px;
+}
+
+.product__content .description {
+  opacity: .5;
+  font-size: 15px;
+  line-height: 25px;
+  max-width: 445px;
+}
+
+.btnPrimary {
+  background: #D87D4A;
+  color: #FFFFFF;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  width: fit-content;
+  display: inline-block;
+  transition: background .3s;
+}
+
+.btnPrimary:hover {
+  background: #FBAF85;
+}
+
+/* RESPONSIVE — TABLET */
+@media (max-width: 768px) {
+  .productsList {
+    gap: 120px;
+    margin: 120px auto;
+  }
+
+  .product {
+    flex-direction: column;
+    gap: 52px;
+    text-align: center;
+  }
+
+  .product.reverse {
+    flex-direction: column;
+  }
+
+  .product__content {
+    align-items: center;
+  }
+
+  .product__content h2 {
+    max-width: 100%;
+  }
+
+  .product__content .description {
+    max-width: 100%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 375px) {
+  .productsList {
+    gap: 96px;
+    margin: 96px auto;
+    padding: 0 16px;
+  }
+
+  .product__content h2 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .product__content .description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

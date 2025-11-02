@@ -15,32 +15,48 @@ body {
   color: var(--clr-dark);
 }
 
+.checkout-wrapper {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.go-back {
+  font-size: 0.9375rem;
+  color: rgba(0, 0, 0, 0.5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+.go-back:hover {
+  color: var(--clr-primary);
+}
+
 .checkout-page {
-  background-color: var(--clr-gray);
+  background-color: #fafafa;
   display: flex;
   justify-content: center;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   min-height: 100vh;
+  margin-top: 160px; /* Added to prevent navbar overlap */
 }
 
 .checkout-container {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
-  max-width: 1110px;
+  align-items: flex-start;
   width: 100%;
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-  .checkout-container {
-    grid-template-columns: 1fr;
-  }
 }
 /* === Form Layout === */
 .checkout-form {
   background-color: var(--clr-white);
-  padding: 3rem;
+  padding: 3.25rem;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -48,7 +64,7 @@ body {
 }
 
 .form-section h2 {
-  font-size: 0.875rem;
+  font-size: 0.775rem;
   color: var(--clr-primary);
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -58,7 +74,7 @@ body {
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem 1.5rem;
 }
 
 .form-group {
@@ -81,8 +97,8 @@ label {
 input {
   border: 1px solid #cfcfcf;
   border-radius: 8px;
-  padding: 1rem;
-  font-size: 0.875rem;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
 }
 
 input:focus {
@@ -129,15 +145,46 @@ input:focus {
 .payment-fields {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem 1.5rem;
   margin-top: 1.5rem;
 }
 
+/* Primary submit button used by CheckoutForm */
+.btn-submit {
+  background: var(--clr-primary);
+  color: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 6px 18px rgba(216,125,74,0.15);
+}
+
+.btn-submit[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* === Responsive === */
+@media (max-width: 1110px) {
+  .checkout-container {
+    gap: 1.5rem;
+  }
+  
+  .checkout-form {
+    padding: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+
   .form-grid,
   .payment-fields {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .payment-method {
@@ -145,25 +192,8 @@ input:focus {
     align-items: flex-start;
     gap: 1rem;
   }
-}
-.checkout-page {
-  background-color: var(--clr-gray);
-  display: flex;
-  justify-content: center;
-  padding: 4rem 1rem;
-  min-height: 100vh;
-}
-
-.checkout-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  max-width: 1110px;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .checkout-container {
-    grid-template-columns: 1fr;
+  
+  .checkout-form {
+    padding: 1.5rem;
   }
 }

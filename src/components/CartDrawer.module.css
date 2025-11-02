@@ -1,0 +1,275 @@
+/* ===== Overlay (background dim) ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.overlay.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ===== Modal container ===== */
+.cartModal {
+  position: absolute;
+  top: 140px;
+  right: 155px;
+  width: 377px;
+  background: #fff;
+  padding: 31px;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeSlideIn 0.3s ease forwards;
+}
+
+/* Animation for modal entrance */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive layout ===== */
+@media (max-width: 768px) {
+  .cartModal {
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+}
+
+/* ===== Header ===== */
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 24px;
+}
+
+.removeAll {
+  background: none;
+  border: none;
+  color: #7d7d7d;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ===== Items list ===== */
+.items {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.thumbWrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f1f1f1;
+  margin-right: 16px;
+}
+
+.thumb {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.details {
+  flex: 1;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+  line-height: 25px;
+  margin: 0;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #808080;
+  line-height: 25px;
+  margin: 0;
+}
+
+/* ===== Quantity controls ===== */
+.qtyControl {
+  display: inline-flex;
+  align-items: center;
+  background: #F1F1F1;
+  padding: 7px 15px;
+  height: 32px;
+}
+
+.qtyBtn {
+  border: none;
+  background: none;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  color: #808080;
+  padding: 0;
+  width: 16px;
+  transition: color 0.2s ease;
+}
+
+.qtyBtn:hover {
+  color: #D87D4A;
+}
+
+.qty {
+  margin: 0 20px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  color: #000;
+  min-width: 16px;
+}
+
+/* ===== Summary section ===== */
+.summary {
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #7d7d7d;
+}
+
+.rowTotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 16px;
+  color: #000;
+}
+
+/* ===== Checkout button ===== */
+.checkoutBtn {
+  background: #D87D4A;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.checkoutBtn:hover {
+  background: #FBAF85;
+}
+
+/* ===== Scrollbar ===== */
+.items::-webkit-scrollbar {
+  width: 4px;
+}
+
+.items::-webkit-scrollbar-thumb {
+  background: #D87D4A;
+  border-radius: 2px;
+}
+
+/* ===== Total and Checkout ===== */
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px 0 24px;
+}
+
+.totalLabel {
+  font-size: 15px;
+  line-height: 25px;
+  color: #808080;
+  text-transform: uppercase;
+}
+
+.totalValue {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+}
+
+.checkoutBtn {
+  background: #D87D4A;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  height: 48px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkoutBtn:hover {
+  background: #FBAF85;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.removeAll {
+  color: #808080;
+  opacity: 0.5;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.removeAll:hover {
+  opacity: 1;
+  color: #D87D4A;
+}

@@ -1,0 +1,133 @@
+/* === FOOTER (Audiophile Replica) === */
+.footer {
+  background-color: #101010;
+  color: #fff;
+  padding: 75px 1.5rem 48px;
+  font-family: "Manrope", sans-serif;
+}
+
+.footer .container {
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+/* top section */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: relative;
+}
+
+/* orange underline bar */
+.bar {
+  background-color: #d87d4a;
+  width: 101px;
+  height: 4px;
+  position: absolute;
+  top: -75px;
+  left: 0;
+}
+
+/* nav links */
+.nav {
+  display: flex;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+
+.nav .link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.2s ease;
+}
+
+.nav .link:hover {
+  color: #d87d4a;
+}
+
+/* bottom section */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 36px;
+}
+
+.description {
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 25px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.copy {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transform: translateY(-70px);
+}
+
+.socials a img {
+  transition: filter 0.2s ease;
+}
+
+.socials a:hover img {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(38%) saturate(2446%) hue-rotate(338deg) brightness(94%) contrast(91%);
+}
+
+/* === Responsive adjustments === */
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .bar {
+    position: static;
+    margin-bottom: 24px;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .bottom {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

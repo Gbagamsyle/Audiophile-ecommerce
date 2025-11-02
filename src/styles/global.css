@@ -1,12 +1,178 @@
-/* src/styles/globals.css */
-* {
+/* --------------------
+   RESET / BASE STYLES
+-------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #fff;
-  color: #000;
+  font-family: 'Manrope', sans-serif; /* Matches Figma typography */
+  color: #000; /* Default text color */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Default background for pages without hero */
+body:not(.has-hero) {
+  background-color: #fafafa;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* --------------------
+   COLORS & BRAND
+-------------------- */
+:root {
+  --primary-color: #d87d4a;
+  --primary-hover: #fbaf85;
+  --secondary-color: #000;
+  --text-color: #000;
+  --subtext-color: #555;
+  --background-color: #fafafa;
+  --white: #fff;
+  /* responsive breakpoints */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1110px;
+}
+
+/* --------------------
+   TYPOGRAPHY
+-------------------- */
+body, input, button, textarea {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* --------------------
+   BUTTONS
+-------------------- */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+/* --------------------
+   FORMS
+-------------------- */
+input, textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.75rem;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* --------------------
+   LAYOUT
+-------------------- */
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Utility: centralized content wrapper common in Figma layout */
+.site-container {
+  max-width: var(--bp-desktop);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Headings scale to match Figma across breakpoints */
+h1 {
+  font-size: 2rem;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  h1 { font-size: 2.75rem; }
+  h2 { font-size: 1.125rem; }
+}
+
+@media (min-width: 1110px) {
+  h1 { font-size: 3rem; }
+}
+
+/* --------------------
+   RESPONSIVE
+-------------------- */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
 }

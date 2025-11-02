@@ -1,0 +1,148 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 729px;
+  background-color: #191919;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #191919;
+}
+
+.heroBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.heroImage {
+  position: relative !important;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.95;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1110px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 96px 24px 0;
+  display: flex;
+  align-items: center;
+  padding-top: 192px; /* Account for fixed navbar (96px * 2) */
+}
+
+.content {
+  position: relative;
+  max-width: 396px;
+  z-index: 2;
+  margin-left: 0;
+}
+
+.overline {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: #FFFFFF;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 40px;
+  opacity: 0.75;
+}
+
+.button {
+  background-color: #D87D4A;
+  color: #FFFFFF;
+  border: none;
+  padding: 15px 30px;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #FBAF85;
+}
+
+/* Desktop and Above */
+@media (min-width: 1110px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 639px;
+  }
+
+  .container {
+    text-align: center;
+    justify-content: center;
+    padding: 0 24px;
+  }
+
+  .content {
+    max-width: 379px;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 52px;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 375px) {
+  .hero {
+    height: 510px;
+  }
+
+  .content {
+    max-width: 328px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    margin-bottom: 28px;
+  }
+}
