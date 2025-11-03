@@ -1,4 +1,4 @@
-/* === FOOTER (Audiophile Replica) === */
+
 .footer {
   background-color: #101010;
   color: #fff;
@@ -158,13 +158,18 @@
 
   .nav {
     flex-direction: column;
-    text-align: center;
-    gap: 16px;
-    margin: 48px 0;
+    text-align: left;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 24px 0 16px;
   }
 
+  /* position the bar at the top-left of the .top block on very small screens */
   .bar {
-    margin-bottom: 40px;
+    position: absolute;
+    top: 0;
+    left: 24px;
+    margin: 0 0 8px 0;
   }
 
   .description {
@@ -192,7 +197,8 @@
   }
 
   .leftSide {
-    gap: 0;
+    gap: 8px;
+    align-items: flex-start;
   }
 
   .nav .link {
