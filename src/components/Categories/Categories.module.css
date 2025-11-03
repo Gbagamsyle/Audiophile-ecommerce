@@ -26,13 +26,17 @@
 }
 
 /* Mobile Styles */
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   .categories {
-    padding: 84px 0;
+    padding: 52px 0;
+  }
+
+  .container {
+    padding: 0 18px;
   }
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 68px;
+    gap: 40px;
   }
 }

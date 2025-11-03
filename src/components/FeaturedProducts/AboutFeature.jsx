@@ -21,24 +21,16 @@ const AboutFeature = () => {
           </p>
         </div>
 <div className={styles.imageWrap}>
-          <Image
-            src={desktopImg} // default desktop
-            alt="Person listening to headphones"
-            fill
-            className={styles.image}
-            priority
-            sizes="
-              (max-width: 375px) 100vw,
-              (max-width: 768px) 100vw,
-              50vw
-            "
-            srcSet={`
-              ${mobileImg.src} 375w,
-              ${tabletImg.src} 768w,
-              ${desktopImg.src} 1110w
-            `}
-          />
-          </div>
+  <picture>
+    <source media="(min-width: 1110px)" srcSet={desktopImg.src} />
+    <source media="(min-width: 769px)" srcSet={tabletImg.src} />
+    <img
+      src={mobileImg.src}
+      alt="Person listening to headphones"
+      className={styles.image}
+    />
+  </picture>
+</div>
 
       </div>
     </section>

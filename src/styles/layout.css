@@ -20,9 +20,16 @@
 .hero-left {
   max-width: 400px;
   padding: 0 1.5rem;
-  margin-left: calc((100vw - 1110px) / 2);
   z-index: 2;
 }
+
+/* only apply this on desktop width */
+@media (min-width: 1110px) {
+  .hero-left {
+    margin-left: calc((100vw - 1110px) / 2);
+  }
+}
+
 
 .eyebrow {
   color: rgba(255, 255, 255, 0.5);
@@ -96,3 +103,12 @@
     margin-top: 1.5rem;
   }
 }
+html, body {
+  overflow-x: hidden;
+}
+.ZX9Feature-module__patternContainer,
+.ZX9Feature-module__pattern {
+  max-width: 100%;
+  overflow: hidden;
+}
+
