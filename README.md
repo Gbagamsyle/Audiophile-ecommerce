@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Audiophile E-commerce Website  
+A pixel-perfect, responsive e-commerce build using Next.js (App Router), vanilla CSS modules, and a Convex backend.  
+Built from the [Figma design](https://www.figma.com/design/uTnFYlpTaP1yJhqq3UXZSj/audiophile-ecommerce-website--Copy-?node-id=0-1607&t=h6641l47lEBSgs5F-0) to showcase real-world frontend engineering with full checkout flow, order storage, and transactional email.
 
-## Getting Started
+## 🚀 Live Demo  
+[View it live on Vercel] https://audiophile-ecommerce-cyan.vercel.app/ 
 
-First, run the development server:
+## 🧰 Stack & Technologies  
+- **Framework & UI**: [Next.js](https://nextjs.org) 16 (App Router)  
+- **Backend & Persistence**: [Convex](https://convex.dev) for data-storage and serverless functions  
+- CSS Modules + vanilla CSS (mobile-first, responsive layout)  
+- Responsive design for mobile/tablet/desktop  
+- Transactional emails managed via [Resend](https://resend.com) (or another provider)  
+- Version control: GitHub  
 
-```bash
+## 🎯 Key Features  
+- Fully responsive layout with pixel-perfect implementation of the original Figma design  
+- Global style management via CSS variables and mobile-first breakpoints  
+- Cart functionality: add items, manage quantities, store orders in Convex  
+- Checkout flow: order confirmation page, email notification  
+- Accessible forms & semantic markup  
+- Modular components (Hero, ProductCard, CategoryCard, Footer)  
+- CI/CD deployment via Vercel – automatic builds on every push  
+
+## 🔧 Getting Started (Local)  
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/Gbagamsyle/Audiophile-ecommerce.git
+   cd Audiophile-ecommerce
+
+   2. Install dependencies
+
+npm install
+
+
+3. Setup environment variables
+Create a .env.local file with:
+
+RESEND_API_KEY=your-resend-key
+CONVEX_URL=your-convex-deployment-url
+NEXTAUTH_URL=http://localhost:3000
+
+
+4. Run development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+##🧑‍💻 Author
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ogaba Silas — Fullstack Engineer
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
